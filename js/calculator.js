@@ -37,7 +37,7 @@
     calcWindow.innerHTML = '0';
 
     calc.addEventListener('click', function (evt) {
-        if (evt.target.closest(btnClass) && !evt.target.disabled) {
+        if (evt.target.closest(btnClass) && !evt.target.closest(btnClass).disabled) {
             var btnValue = evt.target.closest(btnClass).value;
             if (evt.target.closest(btnID.clear)) {
                 // Если нажали очистить
