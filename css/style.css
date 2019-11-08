@@ -15,6 +15,7 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  min-width: 320px;
   margin: 0;
   padding: 0;
   min-height: 100%;
@@ -26,25 +27,17 @@ html {
   padding: 15px;
   box-sizing: border-box;
 }
-.calculator__operation,
 .calculator__window {
-  margin-left: 1px;
-  margin-right: 1px;
+  height: 60px;
+  margin: 0 1px 1px;
   padding: 7px;
   background: rgba(255, 255, 255, 0.07);
   text-align: right;
   overflow: hidden;
   box-sizing: border-box;
-}
-.calculator__operation {
-  height: 30px;
-  padding-bottom: 0;
-}
-.calculator__window {
-  height: 60px;
-  margin-bottom: 1px;
   font-size: 30px;
   color: rgba(255, 255, 255, 0.9);
+  text-overflow: ellipsis;
 }
 .calculator__btns {
   display: flex;
