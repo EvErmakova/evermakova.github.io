@@ -32,6 +32,7 @@
         'point': 190
     };
     var string = '0';
+    var lastOfString = '';
 
     //Начальное значение
     calcWindow.innerHTML = '0';
@@ -51,7 +52,7 @@
                 }
             } else if (evt.target.closest(btnID.sum)) {
                 // Если нажали равно
-                if (string.slice(-1) !== '+' && string.slice(-1) !== '-' && string.slice(-1) !== '/' && string.slice(-1) !== '*') {
+                if (lastOfString !== '+' && lastOfString !== '-' && lastOfString !== '/' && lastOfString !== '*') {
                     string = eval(string).toString();
                 }
             } else if (evt.target.closest(btnID.point)) {
@@ -69,8 +70,8 @@
             } else {
                 // Если нажали любую другую кнопку
                 if (string == '0' && !evt.target.closest(numberClass) && btnValue !== '-') {
-                } else if ((string.slice(-1) === '+' || string.slice(-1) === '-' || string.slice(-1) === '/' || string.slice(-1) === '*') && !evt.target.closest(numberClass)) {
-                    if (btnValue !== string.slice(-1)) {
+                } else if ((lastOfString === '+' || lastOfString === '-' || lastOfString === '/' || lastOfString === '*') && !evt.target.closest(numberClass)) {
+                    if (btnValue !== lastOfString) {
                         string = string.substring(0, string.length - 1) + btnValue;
                     }
                 } else {
@@ -82,18 +83,20 @@
                 }
             }
             calcWindow.innerHTML = string;
+            lastOfString = string.slice(-1);
         }
     });
 
+    // Обработчик клавиатуры
     window.addEventListener('keydown', function (evt) {
         var key = evt.keyCode;
         Object.keys(keyCode).forEach(function (item) {
-            if (key == keyCode['enter']) {
+            if (key == keyCode.enter) {
                 document.querySelector(btnID.sum).click();
             } else if (evt.shiftKey) {
-                if (key == keyCode['eight']) {
+                if (key == keyCode.eight) {
                     document.querySelector(btnID.multiply).click();
-                } else if (key == keyCode['sum']) {
+                } else if (key == keyCode.sum) {
                     document.querySelector(btnID.plus).click();
                 }
             } else if (key == keyCode[item]) {
