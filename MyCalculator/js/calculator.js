@@ -13,23 +13,23 @@
         point: '#pointBtn'
     };
     var keyCode = {
-        'one': 49,
-        'two': 50,
-        'three': 51,
-        'four': 52,
-        'five': 53,
-        'six': 54,
-        'seven': 55,
-        'eight': 56,
-        'nine': 57,
-        'zero': 48,
-        'clear': 27,
-        'backspace': 8,
-        'division': 191,
-        'minus': 189,
-        'sum': 187,
-        'enter': 13,
-        'point': 190
+        one: 49,
+        two: 50,
+        three: 51,
+        four: 52,
+        five: 53,
+        six: 54,
+        seven: 55,
+        eight: 56,
+        nine: 57,
+        zero: 48,
+        clear: 27,
+        backspace: 8,
+        division: 191,
+        minus: 189,
+        sum: 187,
+        enter: 13,
+        point: 190
     };
     var string = '0';
     var lastOfString = '';
@@ -38,8 +38,9 @@
     calcWindow.innerHTML = '0';
 
     calc.addEventListener('click', function (evt) {
-        if (evt.target.closest(btnClass) && !evt.target.closest(btnClass).disabled) {
-            var btnValue = evt.target.closest(btnClass).value;
+        var target = evt.target.closest(btnClass);
+        if (target && !target.disabled) {
+            var btnValue = target.value;
             if (evt.target.closest(btnID.clear)) {
                 // Если нажали очистить
                 string = '0';

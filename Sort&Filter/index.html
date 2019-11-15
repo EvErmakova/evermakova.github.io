@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort&Filter</title>
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="uk-card">
+    <div class="uk-card-body">
+        <h1>MyBooks</h1>
+        <div class="uk-margin-bottom filters">
+            <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@m uk-margin-remove-top uk-margin-remove-bottom">
+                <div class="uk-margin-bottom">
+                    <label class="uk-form-label" for="bookName">Название:</label>
+                    <div class="uk-flex">
+                        <input class="uk-input js-filter" type="text" data-filter="name" id="bookName">
+                        <button class="uk-button uk-button-default js-filter-clear clear-button" type="button" title="Сбросить">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.756579 0.147949L0 0.904528L9.0954 9.99992L0 19.0953L0.756579 19.8519L9.85197 10.7565L18.9474 19.8519L19.7039 19.0953L10.6086 9.99992L19.7039 0.904528L18.9474 0.147949L9.85197 9.24334L0.756579 0.147949Z" fill="#333"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="uk-margin-bottom">
+                    <label class="uk-form-label" for="bookAuthor">Автор:</label>
+                    <div class="uk-flex">
+                        <input class="uk-input js-filter" type="text" data-filter="author" id="bookAuthor">
+                        <button class="uk-button uk-button-default js-filter-clear clear-button" type="button" title="Сбросить">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.756579 0.147949L0 0.904528L9.0954 9.99992L0 19.0953L0.756579 19.8519L9.85197 10.7565L18.9474 19.8519L19.7039 19.0953L10.6086 9.99992L19.7039 0.904528L18.9474 0.147949L9.85197 9.24334L0.756579 0.147949Z" fill="#333"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="uk-margin-bottom">
+                    <label class="uk-form-label" for="bookGenre">Жанр:</label>
+                    <div class="uk-flex">
+                        <select class="uk-select js-filter" data-filter="genre" id="bookGenre">
+                            <option hidden disabled selected value></option>
+                        </select>
+                        <button class="uk-button uk-button-default js-filter-clear clear-button" type="button" title="Сбросить">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.756579 0.147949L0 0.904528L9.0954 9.99992L0 19.0953L0.756579 19.8519L9.85197 10.7565L18.9474 19.8519L19.7039 19.0953L10.6086 9.99992L19.7039 0.904528L18.9474 0.147949L9.85197 9.24334L0.756579 0.147949Z" fill="#333"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="uk-margin-bottom">
+                    <label class="uk-form-label" for="bookStatus">Статус:</label>
+                    <div class="uk-flex">
+                        <select class="uk-select js-filter" data-filter="status" id="bookStatus">
+                            <option hidden disabled selected value></option>
+                        </select>
+                        <button class="uk-button uk-button-default js-filter-clear clear-button" type="button" title="Сбросить">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.756579 0.147949L0 0.904528L9.0954 9.99992L0 19.0953L0.756579 19.8519L9.85197 10.7565L18.9474 19.8519L19.7039 19.0953L10.6086 9.99992L19.7039 0.904528L18.9474 0.147949L9.85197 9.24334L0.756579 0.147949Z" fill="#333"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@m uk-margin-remove-top uk-margin-remove-bottom">
+                <div class="uk-margin-bottom">
+                    <button class="uk-button uk-button-default uk-margin-small-top js-filter-clear-all uk-width" type="button" title="Сбросить всё">Сбросить всё</button>
+                </div>
+            </div>
+        </div>
+        <table class="uk-table uk-table-striped books">
+            <thead>
+            <tr>
+                <th >Название</th>
+                <th>Автор</th>
+                <th>Жанр</th>
+                <th>Статус</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/filter.js"></script>
+</body>
+</html>

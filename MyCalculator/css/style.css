@@ -81,7 +81,8 @@ html {
 }
 .calculator__btn:hover,
 .calculator__btn:focus,
-.calculator__btn:active {
+.calculator__btn:active,
+.calculator__btn.active {
   background: rgba(255, 255, 255, 0.1);
   outline: none;
 }
@@ -90,7 +91,8 @@ html {
 }
 .calculator__btn--number:hover,
 .calculator__btn--number:focus,
-.calculator__btn--number:active {
+.calculator__btn--number:active,
+.calculator__btn--number.active {
   background: rgba(255, 255, 255, 0.23);
 }
 .calculator__btn--sum {
@@ -98,6 +100,7 @@ html {
 }
 .calculator__btn--sum:hover,
 .calculator__btn--sum:focus,
-.calculator__btn--sum:active {
+.calculator__btn--sum:active,
+.calculator__btn--sum.active {
   background: #db6e00;
 }
