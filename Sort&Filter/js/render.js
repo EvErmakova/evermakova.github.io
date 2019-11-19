@@ -49,11 +49,9 @@
         list.forEach(function (item) {
             var tr = document.createElement('tr');
             Object.keys(item).forEach(function (key) {
-                if (key !== 'id') {
-                    var td = document.createElement('td');
-                    td.textContent = item[key];
-                    tr.appendChild(td);
-                }
+                var td = document.createElement('td');
+                td.textContent = item[key];
+                tr.appendChild(td);
             });
             booksBody.appendChild(tr);
         });
