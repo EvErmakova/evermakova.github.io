@@ -44,11 +44,9 @@
     //Фильтрация
     var getFilteredList = function () {
         var filteredData = data.slice();
-        window.filteredData = '';
 
         if (window.sortedData && window.sortedData !== '') {
             var sortedData = window.sortedData;
-            console.log(sortedData);
             if (sortedData !== filteredData) {
                 filteredData = sortedData.slice();
             }
@@ -74,8 +72,6 @@
                     return itemValue.indexOf(value) >= 0;
                 }
             });
-
-            window.filteredData = filteredData;
         };
 
         filter.forEach(function (filter) {
@@ -104,10 +100,10 @@
         var alertMessage = document.createElement('div');
         alertMessage.classList.add('uk-alert', 'uk-alert-danger');
         alertMessage.textContent = 'Ничего не найдено';
-        if (filteredData.length == 0) {
+        if (filteredData.length == 0 && !table.closest('.' + hiddenClass)) {
             table.classList.add(hiddenClass);
             body.appendChild(alertMessage);
-        } else if (table.closest('.' + hiddenClass)) {
+        } else if (filteredData.length !== 0 && table.closest('.' + hiddenClass)) {
             table.classList.remove(hiddenClass);
             body.removeChild(body.querySelector('.uk-alert'));
         }
@@ -159,4 +155,6 @@
             toggleFilterListVisibility();
         }
     });
+
+    window.filter = getFilteredList;
 })();

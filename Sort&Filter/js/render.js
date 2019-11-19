@@ -32,7 +32,7 @@
     });
 
     //Первыми выводить "хочу прочитать"
-    data.sort(function (left, right) {
+    data.sort(function (a, b) {
         var getRank = function (book) {
             var rank = 0;
             if (book.status === 'Читаю') {
@@ -40,7 +40,7 @@
             }
             return rank;
         };
-        var rankDiff = getRank(right) - getRank(left);
+        var rankDiff = getRank(b) - getRank(a);
         return rankDiff;
     });
 
@@ -49,9 +49,11 @@
         list.forEach(function (item) {
             var tr = document.createElement('tr');
             Object.keys(item).forEach(function (key) {
-                var td = document.createElement('td');
-                td.textContent = item[key];
-                tr.appendChild(td);
+                if (key !== 'id') {
+                    var td = document.createElement('td');
+                    td.textContent = item[key];
+                    tr.appendChild(td);
+                }
             });
             booksBody.appendChild(tr);
         });
