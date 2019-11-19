@@ -5,4 +5,4 @@
   <li><a href="/Sort&Filter">Book's list with filters and sorts</a></li>
 </ul>
 
-<p>My GihHub: <a href="https://github.com/EvRusskikh/evrusskikh.github.io">https://github.com/EvRusskikh/evrusskikh.github.io</a></p>
+<p>My GihHub: <a href="https://github.com/EvRusskikh/evrusskikh.github.io" target="_blank">https://github.com/EvRusskikh/evrusskikh.github.io</a></p>
