@@ -7,13 +7,27 @@
     var books = document.querySelector('.books');
     var booksBody = books.querySelector('tbody');
 
-    //Выводим options
+    //Выводим checkboxы
     Object.keys(filterList).forEach(function (item) {
         var filter = document.querySelector('#' + item);
+        var nodeName = filter.nodeName.toLowerCase();
         filterList[item].forEach(function (item) {
-            var option = document.createElement('option');
-            option.textContent = item;
-            filter.appendChild(option);
+            if (nodeName == 'select') {
+                var option = document.createElement('option');
+                option.textContent = item;
+                filter.appendChild(option);
+            } else if (nodeName == 'ul') {
+                var li = document.createElement('li');
+                var label = document.createElement('label');
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.classList.add('uk-checkbox');
+                checkbox.value = item;
+                label.textContent = ' ' + item;
+                label.prepend(checkbox);
+                li.appendChild(label);
+                filter.appendChild(li);
+            }
         });
     });
 

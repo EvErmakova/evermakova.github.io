@@ -36,9 +36,13 @@
                 <div class="uk-margin-bottom">
                     <label class="uk-form-label" for="bookGenre">Жанр:</label>
                     <div class="uk-flex">
-                        <select class="uk-select js-filter" data-filter="genre" id="bookGenre">
-                            <option hidden disabled selected value></option>
-                        </select>
+                        <!--<select class="uk-select js-filter" data-filter="genre" id="bookGenre">-->
+                            <!--<option hidden disabled selected value></option>-->
+                        <!--</select>-->
+                        <div class="filter">
+                            <button class="uk-select filter__btn js-filter-btn" type="button"></button>
+                            <ul class="uk-list uk-hidden filter__list js-filter" id="bookGenre" data-filter="genre"></ul>
+                        </div>
                         <button class="uk-button uk-button-default js-filter-clear clear-button" type="button" title="Сбросить">
                             <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.756579 0.147949L0 0.904528L9.0954 9.99992L0 19.0953L0.756579 19.8519L9.85197 10.7565L18.9474 19.8519L19.7039 19.0953L10.6086 9.99992L19.7039 0.904528L18.9474 0.147949L9.85197 9.24334L0.756579 0.147949Z" fill="#333"></path></svg>
                         </button>
@@ -65,18 +69,20 @@
         <table class="uk-table uk-table-striped books">
             <thead>
             <tr>
-                <th >Название</th>
-                <th>Автор</th>
+                <th class="sortable" data-sort="name">Название</th>
+                <th class="sortable" data-sort="author">Автор</th>
                 <th>Жанр</th>
                 <th>Статус</th>
             </tr>
             </thead>
             <tbody></tbody>
         </table>
+
     </div>
 </div>
 <script src="js/data.js"></script>
 <script src="js/render.js"></script>
 <script src="js/filter.js"></script>
+<script src="js/sort.js"></script>
 </body>
 </html>
