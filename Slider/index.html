@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide jarallax" data-jarallax data-video-src="images/multimedia.mp4">
+                <div class="swiper-content">Slide1</div>
+                <picture class="jarallax-img">
+                    <source type="image/webp" media="(min-width: 320px) and (max-width: 767px)"
+                            srcset="images/slide1-mobile.webp"
+                    >
+                    <source type="image/jpg" media="(min-width: 320px) and (max-width: 767px)"
+                            srcset="images/slide1-mobile.jpg"
+                    >
+                    <source type="image/webp" srcset="images/slide1.webp">
+                    <source type="image/jpg" srcset="images/slide1.jpg">
+                    <img src=images/slide1-mobile.jpg alt="">
+                </picture>
+            </div>
+            <div class="swiper-slide jarallax">
+                <div class="swiper-content">Slide2</div>
+                <picture class="jarallax-img">
+                    <source type="image/webp" media="(min-width: 320px) and (max-width: 767px)"
+                            srcset="images/slide2-mobile.webp"
+                    >
+                    <source type="image/jpg" media="(min-width: 320px) and (max-width: 767px)"
+                            srcset="images/slide2-mobile.jpg"
+                    >
+                    <source type="image/webp" srcset="images/slide2.webp">
+                    <source type="image/jpg" srcset="images/slide2.jpg">
+                    <img src=images/slide2-mobile.jpg alt="">
+                </picture>
+            </div>
+            <div class="swiper-slide jarallax" data-jarallax data-video-src="images/dynamics.mp4">
+                <div class="swiper-content">Slide3</div>
+                <picture class="jarallax-img">
+                    <source type="image/webp" media="(min-width: 320px) and (max-width: 767px)"
+                            srcset="images/slide3-mobile.webp"
+                    >
+                    <source type="image/jpg" media="(min-width: 320px) and (max-width: 767px)"
+                            srcset="images/slide3-mobile.jpg"
+                    >
+                    <source type="image/webp" srcset="images/slide3.webp">
+                    <source type="image/jpg" srcset="images/slide3.jpg">
+                    <img src=images/slide3-mobile.jpg alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div style="height: 800px;"></div>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

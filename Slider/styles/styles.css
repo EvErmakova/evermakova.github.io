@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+}
+
+.swiper {
+    position: relative;
+}
+
+.swiper-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica, Arial, sans-serif;
+    height: 100vh;
+    min-height: 400px;
+    z-index: 10;
+    font-size: 40px;
+    color: #fff;
+}
+
+.swiper-pagination {
+     position: absolute;
+     bottom: 10px;
+     left: 0;
+     right: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     transition: 300ms opacity;
+     transform: translate3d(0, 0, 0);
+     z-index: 10;
+ }
+
+.swiper-pagination-bullet {
+    display: block;
+    margin: 30px 10px;
+    cursor: pointer;
+    background: #bbb;
+    height: 5px;
+    width: 80px;
+    border-radius: 90px;
+    position: relative;
+    opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+    background: lightskyblue;
+}
+
+.swiper-pagination-bullet::after {
+     content: '';
+     display: block;
+     position: absolute;
+     top: -30px;
+     left: -10px;
+     right: -10px;
+     bottom: -30px;
+}
+
+.swiper-pagination-bullet::before {
+     content: '';
+     border-radius: 90px;
+     height: 5px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 0;
+     display: block;
+     background: royalblue;
+}
+
+.swiper-pagination-bullet-active::before {
+     animation-duration: 3s;
+     animation-name: pagination-active;
+     animation-timing-function: linear;
+     animation-fill-mode: forwards;
+}
+
+.swiper.swiper-stop-animation .swiper-pagination-bullet-active::before {
+     animation-play-state: paused;
+}
+
+@keyframes pagination-active {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
