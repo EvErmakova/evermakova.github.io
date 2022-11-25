@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: Helvetica, Arial, sans-serif;
-    height: 100vh;
+    height: calc(100vh - env(safe-area-inset-bottom));
     min-height: 400px;
     z-index: 10;
     font-size: 40px;
